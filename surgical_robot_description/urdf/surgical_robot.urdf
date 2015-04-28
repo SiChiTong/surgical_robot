@@ -232,7 +232,7 @@
           <cylinder length="0.12" radius="0.0022"/>
         </geometry>
       </collision>
-     <visual name="needle_driver_visual">
+     <visual name="needle_link_visual">
         <geometry>
           <cylinder length="0.12" radius="0.0022"/>
         </geometry>
@@ -246,7 +246,7 @@
           <cylinder length="0.02" radius="0.0022"/>
         </geometry>
       </collision>
-     <visual name="needle_driver_visual">
+     <visual name="needle_eef_visual">
         <geometry>
           <cylinder length="0.0025" radius="0.0022"/>
         </geometry>
@@ -267,13 +267,13 @@
     <parent link="base_link"/>
     <child link="axial_translation"/>
     <origin xyz="-0.021 0.01395 -0.04806 " rpy="0 0 0" />
-    
+    <pose> 0 0 0 0 0 0</pose>    
 </joint>
 
  <joint name="joint2" type="prismatic">
     <parent link="axial_translation"/>
     <child link="lateral_translation"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.006  0.00995 -0.055" rpy="0 0 0" />    
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 0 1"/>
@@ -282,7 +282,7 @@
  <joint name="joint3" type="prismatic">
     <parent link="lateral_translation"/>
     <child link="vertical_translation"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.0343 0.01195 -0.0054" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
         <axis xyz= "1 0 0"/>
@@ -291,7 +291,7 @@
  <joint name="joint4" type="prismatic">
     <parent link="vertical_translation"/>
     <child link="base"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.011 0.04381 0.007" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -301,7 +301,7 @@
  <joint name="joint5" type="revolute">
     <parent link="base"/>
     <child link="base_yaw"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.0777 0.10202 -0.086" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="1 0 0"/>
@@ -310,7 +310,7 @@
  <joint name="joint6" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_long"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="-0.02126 -0.00202 0.0371" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -320,7 +320,7 @@
 <joint name="joint7" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_short"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="-0.03976 -0.00202 0.0451" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -330,7 +330,7 @@
 <joint name="joint8" type="revolute">
     <parent link="vertical_long"/>
     <child link="horizontal_long"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 0.08 0.01639" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <mimic joint="joint7" multiplier="-1" offset="0"/> 
@@ -341,7 +341,7 @@
 <joint name="joint9" type="revolute">
     <parent link="vertical_long"/>
     <child link="horizontal_short"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 0.0985 0.0085" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -351,16 +351,16 @@
 <!--joint name="joint10" type="revolute">
     <parent link="vertical_short"/>
     <child link="horizontal_long"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.0185 0.08 0.00839" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
-</joint-->
+</joint -->
 
 <joint name="joint11" type="prismatic">
     <parent link="horizontal_long"/>
     <child link="needle_driver"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.16 0.0185 -0.01508" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -369,7 +369,7 @@
 <joint name="joint12" type="prismatic">
     <parent link="horizontal_short"/>
     <child link="needle_driver"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.16 0 -0.00719" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -378,7 +378,7 @@
 <joint name="joint13" type="revolute">
     <parent link="needle_driver"/>
     <child link="needle_link"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 -0.03 -0.03719" rpy="1.57 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz= "0 1 0"/>
@@ -388,10 +388,59 @@
 <joint name="joint14" type="fixed">
     <parent link="needle_link"/>
     <child link="needle_eef"/>
-    
+    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 0 0.06125" rpy="0 0 0" />
 </joint>
 <!-- 0.16 -0.06 -0.03719 -->
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/surgical_robot_description</robotNamespace>
+  </plugin>
+</gazebo>
 
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2"/>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3"/>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4"/>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5"/>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7"/>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 </robot>
   

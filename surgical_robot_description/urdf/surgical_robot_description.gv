@@ -1,0 +1,50 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"axial_translation" [label="axial_translation"];
+"lateral_translation" [label="lateral_translation"];
+"vertical_translation" [label="vertical_translation"];
+"base" [label="base"];
+"base_yaw" [label="base_yaw"];
+"vertical_long" [label="vertical_long"];
+"horizontal_long" [label="horizontal_long"];
+"needle_driver" [label="needle_driver"];
+"needle_link" [label="needle_link"];
+"needle_eef" [label="needle_eef"];
+"horizontal_short" [label="horizontal_short"];
+"needle_driver" [label="needle_driver"];
+"needle_link" [label="needle_link"];
+"needle_eef" [label="needle_eef"];
+"vertical_short" [label="vertical_short"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "joint1" [label="xyz: -0.021 0.01395 -0.04806 \nrpy: 0 -0 0"]
+"joint1" -> "axial_translation"
+"axial_translation" -> "joint2" [label="xyz: 0.006 0.00995 -0.055 \nrpy: 0 -0 0"]
+"joint2" -> "lateral_translation"
+"lateral_translation" -> "joint3" [label="xyz: 0.0343 0.01195 -0.0054 \nrpy: 0 -0 0"]
+"joint3" -> "vertical_translation"
+"vertical_translation" -> "joint4" [label="xyz: 0.011 0.04381 0.007 \nrpy: 0 -0 0"]
+"joint4" -> "base"
+"base" -> "joint5" [label="xyz: 0.0777 0.10202 -0.086 \nrpy: 0 -0 0"]
+"joint5" -> "base_yaw"
+"base_yaw" -> "joint6" [label="xyz: -0.02126 -0.00202 0.0371 \nrpy: 0 -0 0"]
+"joint6" -> "vertical_long"
+"vertical_long" -> "joint8" [label="xyz: 0 0.08 0.01639 \nrpy: 0 -0 0"]
+"joint8" -> "horizontal_long"
+"horizontal_long" -> "joint12" [label="xyz: 0.16 0 -0.00719 \nrpy: 0 -0 0"]
+"joint12" -> "needle_driver"
+"needle_driver" -> "joint13" [label="xyz: 0 -0.03 -0.03719 \nrpy: 1.57 -0 0"]
+"joint13" -> "needle_link"
+"needle_link" -> "joint14" [label="xyz: 0 0 0.06125 \nrpy: 0 -0 0"]
+"joint14" -> "needle_eef"
+"vertical_long" -> "joint9" [label="xyz: 0 0.0985 0.0085 \nrpy: 0 -0 0"]
+"joint9" -> "horizontal_short"
+"horizontal_short" -> "joint12" [label="xyz: 0.16 0 -0.00719 \nrpy: 0 -0 0"]
+"joint12" -> "needle_driver"
+"needle_driver" -> "joint13" [label="xyz: 0 -0.03 -0.03719 \nrpy: 1.57 -0 0"]
+"joint13" -> "needle_link"
+"needle_link" -> "joint14" [label="xyz: 0 0 0.06125 \nrpy: 0 -0 0"]
+"joint14" -> "needle_eef"
+"base_yaw" -> "joint7" [label="xyz: -0.03976 -0.00202 0.0451 \nrpy: 0 -0 0"]
+"joint7" -> "vertical_short"
+}

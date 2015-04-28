@@ -1,0 +1,648 @@
+<sdf version='1.4'>
+  <model name='surgical_robot_description'>
+    <link name='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.0105 0.006975 -0.02403 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.00262609</ixx>
+          <ixy>7.32375e-05</ixy>
+          <ixz>-0.000252315</ixz>
+          <iyy>0.00268769</iyy>
+          <iyz>0.000167609</iyz>
+          <izz>0.0021589</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/MRI_2000.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_collision_axial_translation'>
+        <pose>-0.021 0.01395 -0.04806 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/axial_translation.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/MRI.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_axial_translation'>
+        <pose>-0.021 0.01395 -0.04806 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/axial_translation_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='lateral_translation'>
+      <pose>-0.015 0.0239 -0.10306 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lateral_translation_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/lateral_translation.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lateral_translation_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/lateral_translation_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint2' type='prismatic'>
+      <child>lateral_translation</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='vertical_translation'>
+      <pose>0.0193 0.03585 -0.10846 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='vertical_translation_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_translation.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='vertical_translation_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_translation_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint3' type='prismatic'>
+      <child>vertical_translation</child>
+      <parent>lateral_translation</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='base'>
+      <pose>0.0303 0.07966 -0.10146 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/base_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint4' type='prismatic'>
+      <child>base</child>
+      <parent>vertical_translation</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='base_yaw'>
+      <pose>0.108 0.18168 -0.18746 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_yaw_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/base_yaw.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_yaw_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/base_yaw_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint5' type='revolute'>
+      <child>base_yaw</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='vertical_long'>
+      <pose>0.08674 0.17966 -0.15036 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='vertical_long_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_long.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='vertical_long_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_long_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint6' type='revolute'>
+      <child>vertical_long</child>
+      <parent>base_yaw</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='horizontal_long'>
+      <pose>0.08674 0.25966 -0.13397 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='horizontal_long_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_long.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='horizontal_long_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_long_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint8' type='revolute'>
+      <child>horizontal_long</child>
+      <parent>vertical_long</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='needle_driver'>
+      <pose>0.24674 0.25966 -0.14116 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <visual name='needle_driver_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/needle_driver_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint12' type='prismatic'>
+      <child>needle_driver</child>
+      <parent>horizontal_short</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='horizontal_short'>
+      <pose>0.08674 0.27816 -0.14186 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='horizontal_short_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_short.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='horizontal_short_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_short_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint9' type='revolute'>
+      <child>horizontal_short</child>
+      <parent>vertical_long</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='needle_driver'>
+      <pose>0.24674 0.27816 -0.14905 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <visual name='needle_driver_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/needle_driver_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint121' type='prismatic'>
+      <child>needle_driver</child>
+      <parent>horizontal_short</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='vertical_short'>
+      <pose>0.06824 0.17966 -0.14236 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='vertical_short_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_short.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='vertical_short_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/vertical_short_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint7' type='revolute'>
+      <child>vertical_short</child>
+      <parent>base_yaw</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='horizontal_long'>
+      <pose>0.06824 0.25966 -0.12597 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='horizontal_long_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_long.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='horizontal_long_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/horizontal_long_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint8' type='revolute'>
+      <child>horizontal_long</child>
+      <parent>vertical_long</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+          <effort>1000</effort>
+          <velocity>0.5</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='needle_driver'>
+      <pose>0.22824 0.25966 -0.13316 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <visual name='needle_driver_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://surgical_robot_description/meshes/needle_driver_200.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='joint12' type='prismatic'>
+      <child>needle_driver</child>
+      <parent>horizontal_short</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.1</upper>
+          <effort>0.001</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/surgical_robot_description</robotNamespace>
+    </plugin>
+  </model>
+</sdf>
