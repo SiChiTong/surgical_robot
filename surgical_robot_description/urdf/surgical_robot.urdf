@@ -186,58 +186,64 @@
     <parent link="base_link"/>
     <child link="axial_translation"/>
     
-    <origin xyz="-0.021 0.04806 0.01395" rpy="0 0 0" />
+    <origin xyz="-0.021 0.01395 -0.04806 " rpy="0 0 0" />
     
 </joint>
 
- <joint name="joint2" type="fixed">
+ <joint name="joint2" type="prismatic">
     <parent link="axial_translation"/>
     <child link="lateral_translation"/>
     
-    <origin xyz="0.006 0.055 0.00995" rpy="0 0 0" />    
+    <origin xyz="0.006  0.00995 -0.055" rpy="0 0 0" />    
+    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <axis xyz= "1 0 0"/>
 </joint>
 
- <joint name="joint3" type="fixed">
+ <joint name="joint3" type="prismatic">
     <parent link="lateral_translation"/>
     <child link="vertical_translation"/>
     
-    <origin xyz="0.0343 0.0054 0.01195" rpy="0 0 0" />
+    <origin xyz="0.0343 0.01195 -0.0054" rpy="0 0 0" />
+    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+        <axis xyz= "0 1 0"/>
 </joint>
 
- <joint name="joint4" type="fixed">
+ <joint name="joint4" type="prismatic">
     <parent link="vertical_translation"/>
     <child link="base"/>
     
-    <origin xyz="0.011 -0.007 0.04381" rpy="0 0 0" />
-    <axis> </axis>
+    <origin xyz="0.011 0.04381 0.007" rpy="0 0 0" />
+    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <axis xyz= "0 0 1"/>
+
 </joint>
 
  <joint name="joint5" type="fixed">
     <parent link="base"/>
     <child link="base_yaw"/>
     
-    <origin xyz="0.0492 0.131 0.07602" rpy="0 0 0" />
+    <origin xyz="0.0492 0.07602 -0.131" rpy="0 0 0" />
 </joint>
 
  <joint name="joint6" type="fixed">
     <parent link="base_yaw"/>
     <child link="vertical_long"/>
     
-    <origin xyz="0.00724 -0.0821 0.02398" rpy="0 0 0" />
+    <origin xyz="0.00724 0.02398 0.0821" rpy="0 0 0" />
 </joint>
 
 <joint name="joint7" type="fixed">
     <parent link="base_yaw"/>
     <child link="vertical_short"/>
     
-    <origin xyz="-0.01126 -0.0901 0.02398" rpy="0 0 0" />
+    <origin xyz="-0.01126 0.02398 0.0901" rpy="0 0 0" />
 </joint>
 
 <joint name="joint8" type="fixed">
     <parent link="vertical_long"/>
     <child link="horizontal_long"/>
     
-    <origin xyz="0 -0.01639 0.08" rpy="0 0 0" />
+    <origin xyz="0 0.08 0.01639" rpy="0 0 0" />
 </joint>
 
 
@@ -245,28 +251,28 @@
     <parent link="vertical_long"/>
     <child link="horizontal_short"/>
     
-    <origin xyz="0 -0.0085 0.0985" rpy="0 0 0" />
+    <origin xyz="0 0.0985 0.0085" rpy="0 0 0" />
 </joint>
 
 <joint name="joint10" type="fixed">
     <parent link="vertical_short"/>
     <child link="horizontal_long"/>
     
-    <origin xyz="0.0185 -0.00839 0.08" rpy="0 0 0" />
+    <origin xyz="0.0185 0.08 0.00839" rpy="0 0 0" />
 </joint>
 
 <joint name="joint11" type="fixed">
     <parent link="horizontal_long"/>
     <child link="needle_driver"/>
     
-    <origin xyz="0.16 0.01508 0.0185" rpy="0 0 0" />
+    <origin xyz="0.16 0.0185 -0.01508" rpy="0 0 0" />
 </joint>
 
 <joint name="joint12" type="fixed">
     <parent link="horizontal_short"/>
     <child link="needle_driver"/>
     
-    <origin xyz="0.16 0.00719 0" rpy="0 0 0" />
+    <origin xyz="0.16 0 -0.00719" rpy="0 0 0" />
 </joint>
 
 
