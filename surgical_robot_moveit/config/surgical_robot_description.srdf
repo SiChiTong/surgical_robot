@@ -1,0 +1,158 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="surgical_robot_description">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="complete_group">
+        <joint name="joint2" />
+        <joint name="joint3" />
+        <joint name="joint4" />
+        <joint name="joint5" />
+        <joint name="joint6" />
+        <joint name="joint8" />
+        <joint name="joint9" />
+        <joint name="joint12" />
+        <joint name="joint13" />
+        <joint name="joint14" />
+        <joint name="joint7" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="def_pose" group="complete_group">
+        <joint name="joint12" value="0" />
+        <joint name="joint2" value="0" />
+        <joint name="joint3" value="0" />
+        <joint name="joint4" value="0" />
+        <joint name="joint5" value="0" />
+        <joint name="joint6" value="0" />
+        <joint name="joint7" value="0" />
+        <joint name="joint8" value="0" />
+        <joint name="joint9" value="0" />
+    </group_state>
+    <group_state name="plus_limit_pose" group="complete_group">
+        <joint name="joint12" value="0" />
+        <joint name="joint2" value="0.1" />
+        <joint name="joint3" value="0.0107" />
+        <joint name="joint4" value="0.055" />
+        <joint name="joint5" value="0.5" />
+        <joint name="joint6" value="0" />
+        <joint name="joint7" value="-0.5" />
+        <joint name="joint8" value="0" />
+        <joint name="joint9" value="0" />
+    </group_state>
+    <group_state name="yaw_limit_pose" group="complete_group">
+        <joint name="joint12" value="0" />
+        <joint name="joint2" value="0" />
+        <joint name="joint3" value="0" />
+        <joint name="joint4" value="0" />
+        <joint name="joint5" value="0.5" />
+        <joint name="joint6" value="0" />
+        <joint name="joint7" value="0" />
+        <joint name="joint8" value="0" />
+        <joint name="joint9" value="0" />
+    </group_state>
+    <group_state name="pitch_limit_pose" group="complete_group">
+        <joint name="joint12" value="0" />
+        <joint name="joint2" value="0" />
+        <joint name="joint3" value="0" />
+        <joint name="joint4" value="0" />
+        <joint name="joint5" value="0" />
+        <joint name="joint6" value="0" />
+        <joint name="joint7" value="-0.5" />
+        <joint name="joint8" value="0" />
+        <joint name="joint9" value="0" />
+    </group_state>
+    <group_state name="yaw_pitch_limit_pose" group="complete_group">
+        <joint name="joint12" value="0" />
+        <joint name="joint2" value="0" />
+        <joint name="joint3" value="0" />
+        <joint name="joint4" value="0" />
+        <joint name="joint5" value="0.5" />
+        <joint name="joint6" value="0" />
+        <joint name="joint7" value="-0.5" />
+        <joint name="joint8" value="0" />
+        <joint name="joint9" value="0" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="needle_efect" parent_link="needle_eef" group="complete_group" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="test_bench" type="planar" parent_frame="odom_combined" child_link="base_link" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="test_bench" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="axial_translation" link2="base" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="axial_translation" link2="base_yaw" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="horizontal_long" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="horizontal_short" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="lateral_translation" reason="Adjacent" />
+    <disable_collisions link1="axial_translation" link2="needle_driver" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="needle_link" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="axial_translation" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="base" link2="base_yaw" reason="Adjacent" />
+    <disable_collisions link1="base" link2="horizontal_long" reason="Never" />
+    <disable_collisions link1="base" link2="horizontal_short" reason="Never" />
+    <disable_collisions link1="base" link2="lateral_translation" reason="Never" />
+    <disable_collisions link1="base" link2="needle_driver" reason="Never" />
+    <disable_collisions link1="base" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="base" link2="needle_link" reason="Never" />
+    <disable_collisions link1="base" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="base" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="base" link2="vertical_translation" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="lateral_translation" reason="Never" />
+    <disable_collisions link1="base_link" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="base_link" link2="vertical_translation" reason="Always" />
+    <disable_collisions link1="base_yaw" link2="horizontal_long" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="horizontal_short" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="lateral_translation" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="needle_driver" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="needle_link" reason="Never" />
+    <disable_collisions link1="base_yaw" link2="vertical_long" reason="Adjacent" />
+    <disable_collisions link1="base_yaw" link2="vertical_short" reason="Adjacent" />
+    <disable_collisions link1="base_yaw" link2="vertical_translation" reason="Default" />
+    <disable_collisions link1="horizontal_long" link2="horizontal_short" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="lateral_translation" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="needle_driver" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="needle_link" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="vertical_long" reason="Adjacent" />
+    <disable_collisions link1="horizontal_long" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="horizontal_long" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="horizontal_short" link2="lateral_translation" reason="Never" />
+    <disable_collisions link1="horizontal_short" link2="needle_driver" reason="Adjacent" />
+    <disable_collisions link1="horizontal_short" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="horizontal_short" link2="needle_link" reason="Never" />
+    <disable_collisions link1="horizontal_short" link2="vertical_long" reason="Adjacent" />
+    <disable_collisions link1="horizontal_short" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="horizontal_short" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="needle_driver" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="needle_link" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="lateral_translation" link2="vertical_translation" reason="Adjacent" />
+    <disable_collisions link1="needle_driver" link2="needle_eef" reason="Never" />
+    <disable_collisions link1="needle_driver" link2="needle_link" reason="Adjacent" />
+    <disable_collisions link1="needle_driver" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="needle_driver" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="needle_driver" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="needle_eef" link2="needle_link" reason="Adjacent" />
+    <disable_collisions link1="needle_eef" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="needle_eef" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="needle_eef" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="needle_link" link2="vertical_long" reason="Never" />
+    <disable_collisions link1="needle_link" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="needle_link" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="vertical_long" link2="vertical_short" reason="Never" />
+    <disable_collisions link1="vertical_long" link2="vertical_translation" reason="Never" />
+    <disable_collisions link1="vertical_short" link2="vertical_translation" reason="Never" />
+</robot>
