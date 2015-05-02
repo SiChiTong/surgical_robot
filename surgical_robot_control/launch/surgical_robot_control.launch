@@ -1,6 +1,9 @@
-<?xml version=1.0 ?>
+<?xml version="1.0" ?>
 <launch>
 
+  <!--Load the urdf file on parameter server-->
+  <param name="robot_description" textfile="$(find surgical_robot_description)/urdf/surgical_robot.urdf"/>
+  
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find surgical_robot_control)/config/surgical_robot_control.yaml" command="load"/>
 

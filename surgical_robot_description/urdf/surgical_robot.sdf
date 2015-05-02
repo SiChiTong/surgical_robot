@@ -482,7 +482,7 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='joint121' type='prismatic'>
+    <!--joint name='joint121' type='prismatic'>
       <child>needle_driver</child>
       <parent>horizontal_short</parent>
       <axis>
@@ -495,7 +495,7 @@
         </limit>
         <dynamics/>
       </axis>
-    </joint>
+    </joint -->
     <link name='vertical_short'>
       <pose>0.06824 0.17966 -0.14236 0 -0 0</pose>
       <inertial>
@@ -584,7 +584,7 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='joint8' type='revolute'>
+    <!--joint name='joint8' type='revolute'>
       <child>horizontal_long</child>
       <parent>vertical_long</parent>
       <axis>
@@ -597,7 +597,7 @@
         </limit>
         <dynamics/>
       </axis>
-    </joint>
+    </joint -->
     <link name='needle_driver'>
       <pose>0.22824 0.25966 -0.13316 0 -0 0</pose>
       <inertial>
@@ -626,7 +626,7 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='joint12' type='prismatic'>
+    <!--joint name='joint12' type='prismatic'>
       <child>needle_driver</child>
       <parent>horizontal_short</parent>
       <axis>
@@ -639,7 +639,7 @@
         </limit>
         <dynamics/>
       </axis>
-    </joint>
+    </joint-->
     <static>0</static>
     <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
       <robotNamespace>/surgical_robot_description</robotNamespace>
