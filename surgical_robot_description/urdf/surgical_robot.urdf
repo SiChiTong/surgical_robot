@@ -253,15 +253,15 @@
         <material name="red"/>
       </visual>
     </link>   
- <!--link name="world"/>
+ <link name="world"/>
  
  <joint name="world_link" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 -0.5707 0" />
+    <origin xyz="0 0 0" rpy="1.5707 0 3.14" />
     <axis xyz="0 -0.5 0"/>
     
-</joint-->
+</joint>
 
  <joint name="MRI_base_frame" type="fixed">
    
