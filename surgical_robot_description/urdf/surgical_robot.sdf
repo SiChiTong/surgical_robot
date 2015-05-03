@@ -1,9 +1,10 @@
+<?xml version="1.0" ?>
 <sdf version='1.4'>
   <model name='surgical_robot_description'>
     <link name='base_link'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 0 1.5707 -0 3.14</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.021 0.01395 -0.04806 0 -0 0</pose>
         <mass>0.5</mass>
         <inertia>
           <ixx>0.001</ixx>
@@ -24,7 +25,7 @@
         </geometry>
       </collision>
       <collision name='base_link_collision_axial_translation'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.021 0.01395 -0.04806 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -42,7 +43,7 @@
         </geometry>
       </visual>
       <visual name='base_link_visual_axial_translation'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>-0.021 0.01395 -0.04806 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -55,8 +56,22 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
+    <joint name='world_link' type='revolute'>
+      <child>base_link</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
     <link name='lateral_translation'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0.0148358 -0.103086 0.0238901 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -96,7 +111,7 @@
       <child>lateral_translation</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>
@@ -107,7 +122,7 @@
       </axis>
     </joint>
     <link name='vertical_translation'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0194727 -0.108433 0.0358396 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -147,7 +162,7 @@
       <child>vertical_translation</child>
       <parent>lateral_translation</parent>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-0.999999 0.00159265 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>
@@ -158,7 +173,7 @@
       </axis>
     </joint>
     <link name='base'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0304616 -0.101419 0.0796502 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -198,7 +213,7 @@
       <child>base</child>
       <parent>vertical_translation</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>-1.53415e-07 -9.63267e-05 1</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>
@@ -209,7 +224,7 @@
       </axis>
     </joint>
     <link name='base_yaw'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.108298 -0.187305 0.181662 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -249,7 +264,7 @@
       <child>base_yaw</child>
       <parent>base</parent>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-0.999999 0.00159265 0</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -260,7 +275,7 @@
       </axis>
     </joint>
     <link name='vertical_long'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0869794 -0.150239 0.179646 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -300,7 +315,7 @@
       <child>vertical_long</child>
       <parent>base_yaw</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -311,7 +326,7 @@
       </axis>
     </joint>
     <link name='horizontal_short'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0869659 -0.141748 0.278146 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -351,7 +366,7 @@
       <child>horizontal_short</child>
       <parent>vertical_long</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -362,7 +377,7 @@
       </axis>
     </joint>
     <link name='needle_driver'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.246977 -0.148684 0.278146 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -393,7 +408,7 @@
       <child>needle_driver</child>
       <parent>horizontal_short</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>-1.53415e-07 -9.63267e-05 1</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>
@@ -404,7 +419,7 @@
       </axis>
     </joint>
     <link name='horizontal_long'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0869533 -0.133857 0.259647 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -444,7 +459,7 @@
       <child>horizontal_long</child>
       <parent>vertical_long</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -455,7 +470,7 @@
       </axis>
     </joint>
     <link name='needle_driver'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.246965 -0.140792 0.259646 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -482,11 +497,11 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='horizontal_s_needle_d' type='prismatic'>
+    <joint name='horizontal_s_needle_d2' type='prismatic'>
       <child>needle_driver</child>
       <parent>horizontal_short</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>-1.53415e-07 -9.63267e-05 1</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>
@@ -497,7 +512,7 @@
       </axis>
     </joint>
     <link name='vertical_short'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0684667 -0.142268 0.179646 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -537,7 +552,7 @@
       <child>vertical_short</child>
       <parent>base_yaw</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -548,7 +563,7 @@
       </axis>
     </joint>
     <link name='horizontal_long'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.0684406 -0.125886 0.259648 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -584,11 +599,11 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='horizontal_vertical_long' type='revolute'>
+    <joint name='horizontal_vertical_long2' type='revolute'>
       <child>horizontal_long</child>
       <parent>vertical_long</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0.00159265 0.999999 9.63268e-05</xyz>
         <limit>
           <lower>-0.5</lower>
           <upper>0.5</upper>
@@ -599,7 +614,7 @@
       </axis>
     </joint>
     <link name='needle_driver'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>-0.228452 -0.132821 0.259647 1.5707 -0 3.14</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.5</mass>
@@ -626,11 +641,11 @@
         <angular>0</angular>
       </velocity_decay>
     </link>
-    <joint name='horizontal_s_needle_d' type='prismatic'>
+    <joint name='horizontal_s_needle_d3' type='prismatic'>
       <child>needle_driver</child>
       <parent>horizontal_short</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>-1.53415e-07 -9.63267e-05 1</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.1</upper>

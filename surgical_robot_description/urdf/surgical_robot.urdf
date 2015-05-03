@@ -274,7 +274,6 @@
  <joint name="base_x" type="prismatic">
     <parent link="axial_translation"/>
     <child link="lateral_translation"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.006  0.00995 -0.055" rpy="0 0 0" />    
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 0 1"/>
@@ -283,7 +282,6 @@
  <joint name="base_y" type="prismatic">
     <parent link="lateral_translation"/>
     <child link="vertical_translation"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.0343 0.01195 -0.0054" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
         <axis xyz= "1 0 0"/>
@@ -292,7 +290,6 @@
  <joint name="base_z" type="prismatic">
     <parent link="vertical_translation"/>
     <child link="base"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.011 0.04381 0.007" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -301,8 +298,7 @@
 
  <joint name="base_yaw" type="revolute">
     <parent link="base"/>
-    <child link="base_yaw"/>
-    <pose> 0 0 0 0 0 0</pose>    
+    <child link="base_yaw"/>    
     <origin xyz="0.0777 0.10202 -0.086" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="1 0 0"/>
@@ -311,7 +307,6 @@
  <joint name="base_vertical_long" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_long"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="-0.02126 -0.00202 0.0371" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -321,7 +316,6 @@
 <joint name="base_vertical_short" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_short"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="-0.03976 -0.00202 0.0451" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -331,7 +325,6 @@
 <joint name="horizontal_vertical_long" type="revolute">
     <parent link="vertical_long"/>
     <child link="horizontal_long"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 0.08 0.01639" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <mimic joint="base_vertical_short" multiplier="-1" offset="0"/> 
@@ -342,7 +335,6 @@
 <joint name="horizontal_s_vertical_l" type="revolute">
     <parent link="vertical_long"/>
     <child link="horizontal_short"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 0.0985 0.0085" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -352,7 +344,6 @@
 <joint name="horizontal_l_vertical_s" type="revolute">
     <parent link="vertical_short"/>
     <child link="horizontal_long"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.0185 0.08 0.00839" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
@@ -361,7 +352,6 @@
 <joint name="horizontal_l_needle_d" type="prismatic">
     <parent link="horizontal_long"/>
     <child link="needle_driver"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.16 0.0185 -0.01508" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -370,7 +360,6 @@
 <joint name="horizontal_s_needle_d" type="prismatic">
     <parent link="horizontal_short"/>
     <child link="needle_driver"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0.16 0 -0.00719" rpy="0 0 0" />
     <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
@@ -379,7 +368,6 @@
 <joint name="needle_d_needle_l" type="revolute">
     <parent link="needle_driver"/>
     <child link="needle_link"/>
-    <pose> 0 0 0 0 0 0</pose>    
     <origin xyz="0 -0.03 -0.03719" rpy="1.57 0 0" />
     <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
     <axis xyz= "0 1 0"/>
@@ -388,8 +376,7 @@
 
 <joint name="needle_l_needle_e" type="fixed">
     <parent link="needle_link"/>
-    <child link="needle_eef"/>
-    <pose> 0 0 0 0 0 0</pose>    
+    <child link="needle_eef"/>  
     <origin xyz="0 0 0.06125" rpy="0 0 0" />
 </joint>
 <!-- 0.16 -0.06 -0.03719 -->

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!--Load the urdf file on parameter server-->
+  <param name="robot_description" textfile="$(find surgical_robot_description)/urdf/surgical_robot.sdf"/>
+  
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find surgical_robot_control)/config/surgical_robot_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/surgical_robot" args="joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint7_position_controller joint_state_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/surgical_robot/joint_states" />
+  </node>
+
+</launch>
