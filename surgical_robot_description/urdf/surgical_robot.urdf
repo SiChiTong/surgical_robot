@@ -32,13 +32,13 @@
   <link name="base_link">
       <visual>
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/MRI.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/MRI_2000.stl"/>
 	</geometry>
       <material name="transparent"/>
       </visual>
       <collision>
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/MRI_2000.stl"/>
+	  <mesh filename="package://surgical_robot_description/meshes/MRI.stl"/>
         </geometry>
       </collision>
 	  <!--inertial>
@@ -49,7 +49,7 @@
   <link name="axial_translation">
       <collision name="axial_translation_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/axial_translation.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/axial_translation_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -58,7 +58,7 @@
 	     </inertial>
       <visual name="axial_translation_visual">
       <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/axial_translation_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/axial_translation.stl" />
 	</geometry>
 	<material name="red"/>
       </visual>
@@ -66,7 +66,7 @@
   <link name="lateral_translation">
       <collision name="lateral_translation_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/lateral_translation.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/lateral_translation_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -75,7 +75,7 @@
 	     </inertial>
       <visual name="lateral_translation_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/lateral_translation_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/lateral_translation.stl" />
 	</geometry>
 	<material name="blue"/>
 	</visual>
@@ -83,7 +83,7 @@
   <link name="vertical_translation">
       <collision name="vertical_translation_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_translation.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_translation_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -92,7 +92,7 @@
 	     </inertial>
       <visual name="vertical_translation_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_translation_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_translation.stl" />
 	</geometry>
 	<material name="green"/>
       </visual>
@@ -102,7 +102,7 @@
     <link name="base">
       <collision name="base_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/base.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/base_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -111,7 +111,7 @@
 	     </inertial>
       <visual name="base_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/base_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/base.stl" />
 	</geometry>
 	<material name="yellow"/>
       </visual>
@@ -120,7 +120,7 @@
     <link name="base_yaw">
       <collision name="base_yaw_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/base_yaw.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/base_yaw_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -129,7 +129,7 @@
 	     </inertial>
       <visual name="base_yaw_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/base_yaw_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/base_yaw.stl" />
 	<material name="yellow"/>
 	</geometry>
       </visual>
@@ -138,7 +138,7 @@
     <link name="vertical_long">
       <collision name="vertical_long_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_long.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_long_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -147,7 +147,7 @@
 	     </inertial>
       <visual name="vertical_long_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_long_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_long.stl" />
 	</geometry>
 	<material name="magenta"/>
       </visual>
@@ -156,7 +156,7 @@
       <link name="vertical_short">
       <collision name="vertical_short_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_short.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_short_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -165,7 +165,7 @@
 	     </inertial>
       <visual name="vertical_short_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/vertical_short_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/vertical_short.stl" />
 	</geometry>
 	<material name="magenta"/>
       </visual>
@@ -175,7 +175,7 @@
     <link name="horizontal_long">
       <collision name="horizontal_long_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/horizontal_long.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/horizontal_long_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -184,7 +184,7 @@
 	     </inertial>
       <visual name="horizontal_long_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/horizontal_long_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/horizontal_long.stl" />
 	</geometry>
 	<material name="cyan"/>
       </visual>
@@ -193,7 +193,7 @@
       <link name="horizontal_short">
       <collision name="horizontal_short_geom">
         <geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/horizontal_short.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/horizontal_short_200.stl" />
         </geometry>
       </collision>
 	  	 <inertial>
@@ -202,7 +202,7 @@
 	     </inertial>
       <visual name="horizontal_short_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/horizontal_short_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/horizontal_short.stl" />
 	</geometry>
 	<material name="cyan"/>
       </visual>
@@ -211,7 +211,7 @@
     <link name="needle_driver">
       <!--collision name="needle_driver_geom">
         <geometry>
-	        <mesh filename="package://surgical_robot_description/meshes/needle_driver.stl" />
+	        <mesh filename="package://surgical_robot_description/meshes/needle_driver_200.stl" />
         </geometry>
       </collision-->
 	  	 <inertial>
@@ -220,7 +220,7 @@
 	     </inertial>
       <visual name="needle_driver_visual">
 	<geometry>
-	  <mesh filename="package://surgical_robot_description/meshes/needle_driver_200.stl" />
+	  <mesh filename="package://surgical_robot_description/meshes/needle_driver.stl" />
 	</geometry>
 	<material name="red"/>
       </visual>
@@ -275,7 +275,7 @@
     <parent link="axial_translation"/>
     <child link="lateral_translation"/>
     <origin xyz="0.006  0.00995 -0.055" rpy="0 0 0" />    
-    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <limit lower="0" upper="0.05" effort="0.001" velocity="0.2" />
     <axis xyz= "0 0 1"/>
 </joint>
 
@@ -283,7 +283,7 @@
     <parent link="lateral_translation"/>
     <child link="vertical_translation"/>
     <origin xyz="0.0343 0.01195 -0.0054" rpy="0 0 0" />
-    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <limit lower="-0.02" upper="0.02" effort="0.001" velocity="0.2" />
         <axis xyz= "1 0 0"/>
 </joint>
 
@@ -291,7 +291,7 @@
     <parent link="vertical_translation"/>
     <child link="base"/>
     <origin xyz="0.011 0.04381 0.007" rpy="0 0 0" />
-    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <limit lower="-0.02" upper="0.05" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
 
 </joint>
@@ -299,16 +299,16 @@
  <joint name="base_yaw" type="revolute">
     <parent link="base"/>
     <child link="base_yaw"/>    
-    <origin xyz="0.0777 0.10202 -0.086" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <origin xyz="0.07569 0.100 -0.078" rpy="0 0 0" />
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="1 0 0"/>
 </joint>
 
  <joint name="base_vertical_long" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_long"/>
-    <origin xyz="-0.02126 -0.00202 0.0371" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <origin xyz="-0.01925 0.000 0.02781" rpy="0 0 0" />
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
     <mimic joint="base_vertical_short" multiplier="1" offset="0"/>
 </joint>
@@ -316,8 +316,8 @@
 <joint name="base_vertical_short" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_short"/>
-    <origin xyz="-0.03976 -0.00202 0.0451" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <origin xyz="-0.03775 0.000 0.03581" rpy="0 0 0" />
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
      
 </joint>
@@ -326,7 +326,7 @@
     <parent link="vertical_long"/>
     <child link="horizontal_long"/>
     <origin xyz="0 0.08 0.01639" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <mimic joint="base_vertical_short" multiplier="-1" offset="0"/> 
     <axis xyz="0 0 1"/>
 </joint>
@@ -336,7 +336,7 @@
     <parent link="vertical_long"/>
     <child link="horizontal_short"/>
     <origin xyz="0 0.0985 0.0085" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
     <mimic joint="base_vertical_short" multiplier="-1" offset="0"/> 
 </joint>
@@ -345,7 +345,7 @@
     <parent link="vertical_short"/>
     <child link="horizontal_long"/>
     <origin xyz="0.0185 0.08 0.00839" rpy="0 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
 </joint>
 
@@ -353,7 +353,7 @@
     <parent link="horizontal_long"/>
     <child link="needle_driver"/>
     <origin xyz="0.16 0.0185 -0.01508" rpy="0 0 0" />
-    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <limit lower="-0.05" upper="0.05" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
 </joint>
 
@@ -361,7 +361,7 @@
     <parent link="horizontal_short"/>
     <child link="needle_driver"/>
     <origin xyz="0.16 0 -0.00719" rpy="0 0 0" />
-    <limit lower="0" upper="0.1" effort="0.001" velocity="0.2" />
+    <limit lower="-0.05" upper="0.05" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
 </joint>
 
@@ -369,7 +369,7 @@
     <parent link="needle_driver"/>
     <child link="needle_link"/>
     <origin xyz="0 -0.03 -0.03719" rpy="1.57 0 0" />
-    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/> 
+    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz= "0 1 0"/>
     <mimic joint="base_vertical_short" multiplier="1" offset="0"/>
 </joint>
