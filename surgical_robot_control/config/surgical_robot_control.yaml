@@ -7,21 +7,21 @@ surgical_robot:
   # Position Controllers ---------------------------------------
   joint2_position_controller:
     type: effort_controllers/JointPositionController
-    joint: joint2
+    joint: base_x
     pid: {p: 100.0, i: 0.01, d: 10.0}
   joint3_position_controller:
     type: effort_controllers/JointPositionController
-    joint: joint3
+    joint: base_y
     pid: {p: 100.0, i: 0.01, d: 10.0}
   joint4_position_controller:
     type: effort_controllers/JointPositionController
-    joint: joint4
+    joint: base_z
     pid: {p: 100.0, i: 0.01, d: 10.0}
   joint5_position_controller:
     type: effort_controllers/JointPositionController
-    joint: joint5
+    joint: base_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   joint7_position_controller:
     type: effort_controllers/JointPositionController
-    joint: joint7
+    joint: base_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
