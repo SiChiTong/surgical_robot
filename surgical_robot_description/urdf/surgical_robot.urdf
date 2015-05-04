@@ -310,10 +310,10 @@
     <origin xyz="-0.01925 0.000 0.02781" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
-    <mimic joint="base_vertical_short" multiplier="1" offset="0"/>
+    <mimic joint="base_pitch" multiplier="1" offset="0"/>
 </joint>
 
-<joint name="base_vertical_short" type="revolute">
+<joint name="base_pitch" type="revolute">
     <parent link="base_yaw"/>
     <child link="vertical_short"/>
     <origin xyz="-0.03775 0.000 0.03581" rpy="0 0 0" />
@@ -327,7 +327,7 @@
     <child link="horizontal_long"/>
     <origin xyz="0 0.08 0.01639" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
-    <mimic joint="base_vertical_short" multiplier="-1" offset="0"/> 
+    <mimic joint="base_pitch" multiplier="-1" offset="0"/> 
     <axis xyz="0 0 1"/>
 </joint>
 
@@ -338,10 +338,10 @@
     <origin xyz="0 0.0985 0.0085" rpy="0 0 0" />
     <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz="0 0 1"/>
-    <mimic joint="base_vertical_short" multiplier="-1" offset="0"/> 
+    <mimic joint="base_pitch" multiplier="-1" offset="0"/> 
 </joint>
 
-<joint name="horizontal_l_vertical_s" type="revolute">
+<!--joint name="horizontal_l_vertical_s" type="revolute">
     <parent link="vertical_short"/>
     <child link="horizontal_long"/>
     <origin xyz="0.0185 0.08 0.00839" rpy="0 0 0" />
@@ -355,23 +355,24 @@
     <origin xyz="0.16 0.0185 -0.01508" rpy="0 0 0" />
     <limit lower="-0.05" upper="0.05" effort="0.001" velocity="0.2" />
     <axis xyz= "0 1 0"/>
-</joint>
+</joint-->
 
-<joint name="horizontal_s_needle_d" type="prismatic">
+<joint name="horizontal_s_needle_d" type="revolute">
     <parent link="horizontal_short"/>
     <child link="needle_driver"/>
     <origin xyz="0.16 0 -0.00719" rpy="0 0 0" />
     <limit lower="-0.05" upper="0.05" effort="0.001" velocity="0.2" />
-    <axis xyz= "0 1 0"/>
+    <mimic joint="base_pitch" multiplier="1" offset="0"/>
+    <axis xyz= "0 0 1"/>
 </joint>
 
-<joint name="needle_d_needle_l" type="revolute">
+<joint name="needle_d_needle_l" type="fixed">
     <parent link="needle_driver"/>
     <child link="needle_link"/>
     <origin xyz="0 -0.03 -0.03719" rpy="1.57 0 0" />
-    <limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
+    <!--limit effort="1000.0" lower="-0.52" upper="0.52" velocity="0.5"/> 
     <axis xyz= "0 1 0"/>
-    <mimic joint="base_vertical_short" multiplier="1" offset="0"/>
+    <mimic joint="base_pitch" multiplier="1" offset="0"/-->
 </joint>
 
 <joint name="needle_l_needle_e" type="fixed">
@@ -432,7 +433,7 @@
   
   <transmission name="tran5">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="base_vertical_short">
+    <joint name="base_pitch">
        <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor5">

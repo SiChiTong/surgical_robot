@@ -1,46 +1,26 @@
 joint_limits:
-  joint2:
+  base_yaw:
+    has_velocity_limits: true
+    max_velocity: 0.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  base_x:
     has_velocity_limits: true
     max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
-  joint8:
-    has_velocity_limits: true
-    max_velocity: 0.5
-    has_acceleration_limits: false
-    max_acceleration: 0
-  joint9:
-    has_velocity_limits: true
-    max_velocity: 0.5
-    has_acceleration_limits: false
-    max_acceleration: 0
-  joint12:
+  base_z:
     has_velocity_limits: true
     max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
-  joint5:
-    has_velocity_limits: true
-    max_velocity: 0.5
-    has_acceleration_limits: false
-    max_acceleration: 0
-  joint4:
+  base_y:
     has_velocity_limits: true
     max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
-  joint7:
+  base_pitch:
     has_velocity_limits: true
     max_velocity: 0.5
-    has_acceleration_limits: false
-    max_acceleration: 0
-  joint6:
-    has_velocity_limits: true
-    max_velocity: 0.5
-    has_acceleration_limits: false
-    max_acceleration: 0
-  joint3:
-    has_velocity_limits: true
-    max_velocity: 0.2
     has_acceleration_limits: false
     max_acceleration: 0
